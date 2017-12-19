@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+<script>
+	var str = 'border-bottom-color';
+
+	// function test(str){
+
+	// 	var arr = str.split('-');
+
+	// 	for(var i=1;i<arr.length;i++){
+
+	// 		arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].substring(1);
+	// 	};
+	// 	return arr.join('');
+	// };
+
+	// alert(test(str));
+
+
+	//正则写法
+	function test(str){
+
+		var re = /-(\w)/g;
+
+		return str.replace(re,function($0,$1){
+
+			return $1.toUpperCase();
+
+		});
+	};
+
+	alert(test(str));
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

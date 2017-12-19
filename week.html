@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /**
+     * [1, 2, 3, 4, 5, 6, 7] => 周一至周日
+     * [1, 2, 3, 5, 6, 7] => 周一至周三，周五至周日
+     * [3, 5, 7] => 周三，周五，周日
+     */
+
+     function outputWeek(week) {
+        var obj = {
+            '1': '一', '2': '二', '3': '三', '4': '四', '5': '五', '6': '六', '7': '日'
+        },
+        str = '', tmp = [], arr = [];
+
+        week.forEach((item, index, self) => {
+            if(self[index+1] - item === 1) {
+                tmp.push(item)
+            } else {
+                tmp.push(item)
+                arr.push(tmp)
+                tmp = [];
+            }
+        });
+
+        for (let i = 0; i < arr.length; i++) {
+            if(arr[i].length > 1) {
+                str += (`周${ obj[arr[i][0]] } 至 周${ obj[arr[i][arr[i].length-1]] }，`);
+            } else {
+                str += (`周${ obj[arr[i][0]] }，`);
+            }
+        }
+        console.log(arr);
+        console.log(str);
+     }
+     outputWeek([1, 2, 3, 4, 5, 6, 7]);
+     outputWeek([1, 2, 3, 5, 6, 7]);
+     outputWeek([3, 5, 7]);
+
+
+     /*function arrange(source) {
+         var t;
+         var ta;
+         var r = [];
+
+         source.forEach(function(v) {
+             console.log(t, v);   // 跟踪调试用
+             if (t === v) {
+                 ta.push(t);
+                 t++;
+                 return;
+             }
+
+             ta = [v];
+             t = v + 1;
+             r.push(ta);
+         });
+
+         return r;
+     }
+
+     var arr = [3, 4, 13, 14, 15, 17, 20, 22];
+     console.log(arrange(arr));*/
+</script>
+</body>
+</html>
