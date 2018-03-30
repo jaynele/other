@@ -38,7 +38,7 @@
 18. git push -u origin master/git push origin master
     (推送到远程库,第一次用含有 -u 的命令,推送master分支的所有内容,此后用后面的命令推送最新修改)
 
-19. git clone git@github.com:Bruce333/other.git (克隆一个本地库)
+19. git clone git@github.com:Bruce333/other.git (克隆一个本地库) [git clone -b 分支名 仓库地址] (clone指定分支)
 
 20. git checkout -b dev
     (创建dev分支，然后切换到dev分支,相当于以下两条命令:git branch dev[创建分支]/git checkout dev[切换分支])
